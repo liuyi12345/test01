@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.test01.mapper.GirlMapper">
+    <select id="ListGirl" resultType="com.test.test01.pojo.Girl">
+        SELECT * FROM tb_test
+    </select>
+    <select id="findGirlByName" resultType="com.test.test01.pojo.Girl">
+        SELECT * FROM tb_test where name=#{name}
+    </select>
+    <select id="findGirlById" resultType="com.test.test01.pojo.Girl">
+        SELECT * FROM tb_test where id=#{id}
+    </select>
+    <insert id="insertGirl" parameterType="com.test.test01.pojo.Girl"
+            keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO tb_test VALUES (#{id},#{name},#{gender},#{birthday},#{start})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from tb_test where id=#{id}
+    </delete>
+
+    <update id="Update" parameterType="com.test.test01.pojo.Girl">
+        update tb_test set name=#{name},gender=#{gender},birthday=#{birthday},start=#{start} where id=#{id}
+    </update>
+</mapper>

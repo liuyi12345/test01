@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_test?useEncode=true&characterEncoding=UTF-8
+    username: root
+    password: 1234
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+logging:
+  level:
+   root: warn
+   org.springframework.web: debug
+#freemarker自定义路径
+freemarker:
+  charset: UTF-8
+  content-type: text/html
+  suffix: .ftl
+
+
